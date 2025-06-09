@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Butter Form</title>
+  <style>
+    body {
+      background: #E6E6FA; /* lavender */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #5D3A82; /* deep lavender */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #F8F4FF;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(93, 58, 130, 0.3);
+      padding: 30px 40px;
+      width: 350px;
+      text-align: center;
+      position: relative;
+    }
+    h1 {
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin: 10px 0 5px;
+      font-weight: 600;
+      text-align: left;
+    }
+    input[type="text"], textarea {
+      padding: 10px;
+      border: 2px solid #C8B6FF;
+      border-radius: 10px;
+      outline: none;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      resize: vertical;
+    }
+    input[type="text"]:focus, textarea:focus {
+      border-color: #8A2BE2;
+    }
+    button {
+      margin-top: 20px;
+      background: #B19CD9;
+      border: none;
+      padding: 12px;
+      border-radius: 25px;
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: 700;
+    }
+    button:hover {
+      background: #8A2BE2;
+    }
+    /* Cute hearts decoration */
+    .hearts {
+      position: absolute;
+      top: -15px;
+      right: 15px;
+      font-size: 1.5rem;
+      color: #D8BFD8;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% {opacity: 1;}
+      50% {opacity: 0.6;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hearts">💜💖💜</div>
+    <h1>Butter Form</h1>
+    <form action="/submitbutter" method="POST">
+      <label for="butterName">Butter Name</label>
+      <input type="text" id="butterName" name="butterName" placeholder="Enter Butter Name" required />
+
+      <label for="butterDesc">Butter Description</label>
+      <textarea id="butterDesc" name="butterDesc" rows="4" placeholder="Describe your butter..." required></textarea>
+
+      <button type="submit">Send Butter 💜</button>
+    </form>
+  </div>
+</body>
+</html>
